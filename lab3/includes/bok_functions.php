@@ -3,7 +3,7 @@
  * Visar alla böcker
 */
 function getAllBocker($conn){
-    $query = "SELECT * FROM bok ORDER BY bokTitel ASC";
+    $query = "SELECT * FROM kategori INNER JOIN bok ON kategori.kategoriId = bok.bokKategoriId ORDER BY bokTitel ASC";
 
     $result = mysqli_query($conn,$query) or die("Query failed: $query");
 
